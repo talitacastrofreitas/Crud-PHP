@@ -1,4 +1,13 @@
 <?php
+//CLEAR
+function clear($input) {
+    global $connect;
+    //SQL
+    $var = mysqli_escape_string($connect, $input);
+    //XSS
+    $var = htmlspecialchars($var);
+    return $var;
+}
 //Sessão
 session_start();
 //Conexão
